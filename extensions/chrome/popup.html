@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrypticTrack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">
+            <i class="ph-bold ph-brain brain-icon"></i>
+            <div class="logo-text">
+                <span class="app-name">KrypticTrack</span>
+                <span class="ai-badge">AI Brain</span>
+            </div>
+        </div>
+        <div class="status-indicator" id="statusIndicator">
+            <div class="indicator-dot active" id="indicatorDot"></div>
+            <span id="statusText">Neural Active</span>
+        </div>
+    </div>
+
+    <!-- Loading State - Skeleton -->
+    <div class="loading" id="loading">
+        <div class="card">
+            <div class="card-header">
+                <div class="skeleton skeleton-text" style="width: 60%;"></div>
+            </div>
+            <div class="skeleton skeleton-circle"></div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="skeleton skeleton-stat"></div>
+            <div class="skeleton skeleton-stat"></div>
+            <div class="skeleton skeleton-stat"></div>
+            <div class="skeleton skeleton-stat"></div>
+        </div>
+
+        <div class="card">
+            <div class="skeleton skeleton-text" style="width: 40%;"></div>
+            <div class="skeleton skeleton-text" style="width: 80%;"></div>
+        </div>
+
+        <div class="actions">
+            <div class="skeleton skeleton-button"></div>
+            <div class="skeleton skeleton-button"></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content" id="content" style="display: none;">
+        <!-- Productivity Score -->
+        <div class="card">
+            <div class="card-header">
+                <h3><i class="ph ph-dna"></i> Neural Analysis</h3>
+            </div>
+            <div class="productivity-score">
+                <div class="score-circle">
+                    <svg class="progress-ring" width="120" height="120">
+                        <circle class="progress-ring-bg" cx="60" cy="60" r="52" />
+                        <circle class="progress-ring-fill" id="progressRing" cx="60" cy="60" r="52" />
+                    </svg>
+                    <div class="score-value">
+                        <span class="score-number" id="productivityScore">--</span>
+                        <span class="score-max">/100</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="stats-grid">
+            <div class="stat-item">
+                <i class="ph-fill ph-lightning stat-icon"></i>
+                <div class="stat-content">
+                    <div class="stat-label">Deep Focus</div>
+                    <div class="stat-value" id="focusTime">--</div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <i class="ph-fill ph-arrows-clockwise stat-icon"></i>
+                <div class="stat-content">
+                    <div class="stat-label">Context Jumps</div>
+                    <div class="stat-value" id="contextSwitches">--</div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <i class="ph-fill ph-target stat-icon"></i>
+                <div class="stat-content">
+                    <div class="stat-label">Active Targets</div>
+                    <div class="stat-value" id="activeGoals">--</div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <i class="ph-fill ph-fire stat-icon"></i>
+                <div class="stat-content">
+                    <div class="stat-label">Peak State</div>
+                    <div class="stat-value" id="peakHour">--</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Current Site -->
+        <div class="card current-site">
+            <div class="card-header">
+                <h3><i class="ph ph-lightning"></i> Neural Context</h3>
+            </div>
+            <div class="site-info">
+                <div class="site-name" id="siteName">--</div>
+                <div class="site-stats">
+                    <span class="site-time" id="siteTime">--</span>
+                    <span class="site-badge" id="siteBadge">--</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="actions">
+            <button class="btn btn-primary" id="viewDashboard">
+                <i class="ph-bold ph-brain"></i> Brain Hub
+            </button>
+            <button class="btn btn-secondary" id="viewGoals">
+                <i class="ph-bold ph-target"></i> Targets
+            </button>
+        </div>
+
+        <div class="actions">
+            <button class="btn btn-toggle" id="toggleTracking">
+                <i class="ph-bold ph-pause" id="toggleIcon"></i>
+                <span id="toggleText">Pause Neural Tracking</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Error State -->
+    <div class="error" id="error" style="display: none;">
+        <div class="error-icon">
+            <i class="ph-fill ph-warning-circle" style="font-size: 48px; color: var(--color-error);"></i>
+        </div>
+        <p class="error-message">Backend not available</p>
+        <p class="error-hint">Make sure the KrypticTrack server is running on localhost:5000</p>
+        <button class="btn btn-secondary" id="retryBtn">Retry</button>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+# KrypticTrack Configuration
+
+# Data Collection Settings
+data_collection:
+  enabled: true
+  log_keystrokes: true
+  log_mouse: true
+  log_applications: true
+  log_files: true
+  log_context_switches: true
+  sample_rate_ms: 100  # How often to sample (100ms = 10 samples/sec)
+  
+# Privacy Settings
+privacy:
+  encrypt_data: true
+  local_only: true
+  auto_delete_after_days: null  # null = never auto-delete
+  
+# Database Settings
+database:
+  path: "data/kryptic_track.db"
+  encrypted: true
+  backup_interval_hours: 24
+  
+# Model Settings (Phase 3)
+model:
+  state_dim: 256
+  action_dim: 64
+  hidden_layers: [512, 256, 128]  # 3-5 layers
+  learning_rate: 0.001
+  batch_size: 32
+  device: "cuda"  # or "cpu"
+  
+# Training Settings (Phase 3)
+training:
+  epochs: 100
+  num_epochs: 50
+  learning_rate: 0.001
+  batch_size: 64
+  checkpoint_dir: "models/checkpoints"
+  min_actions_for_training: 1000
+  validation_split: 0.2
+  checkpoint_interval: 10
+  early_stopping_patience: 20
+  
+# Backend Settings
+backend:
+  port: 5000
+  debug: false
+  api_key: "local-dev-key-change-in-production"
+  cors_enabled: true
+
+# Analysis Settings (Phase 4)
+analysis:
+  prediction_threshold: 0.7
+  min_confidence: 0.5
+  dashboard_port: 8501
+

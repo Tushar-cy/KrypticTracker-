@@ -1,0 +1,53 @@
+# Core ML Framework
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio>=2.0.0
+
+# Backend Framework
+flask>=3.0.0
+flask-cors>=4.0.0
+
+# Data Collection
+pynput>=1.7.6
+psutil>=5.9.0
+watchdog>=3.0.0
+
+# Database
+# sqlite3 is built-in to Python, no need to install
+cryptography>=41.0.0  # For encryption
+
+# Data Processing
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+
+# Terminal Dashboard
+rich>=13.0.0
+blessed>=1.20.0
+
+# Visualization (Phase 4)
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Utilities
+python-dotenv>=1.0.0
+tqdm>=4.65.0
+pyyaml>=6.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Development
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.5.0
+isort>=5.12.0
+
+# Validation & Security
+pydantic>=2.0.0
+flask-limiter>=3.5.0
+
+# Logging
+structlog>=23.2.0
+

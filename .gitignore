@@ -1,0 +1,71 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+venv/
+.venv/
+env/
+ENV/*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Node / Frontend
+node_modules/
+frontend/node_modules/
+*.log
+npm-debug.log*
+
+# Builds & Artifacts
+.dashboard.pid
+*.egg-info/
+*.so
+*.out
+*.zip
+
+# Databases & Local Data
+data/
+*.db
+*.sqlite
+*.sqlite3
+logs/
+models/checkpoints/
+
+# Frontend build output
+frontend/dist/
+dashboard/web/static/dist/
+
+# Environment
+.env
+.env.*
+*.env
+*.env.local
+*.pid
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Documentation (keep only root README)
+*.md
+!/README.md
+
+# Misc
+coverage/
